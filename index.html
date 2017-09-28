@@ -6,7 +6,7 @@
     <p>{{ message }}</p>
 
     <input v-model="steamid" placeholder="steam id">
-    <button v-on:click="fetchGameList">my games</button>
+    <button v-on:click="fetchGameList">fetch my games</button>
 
     <br>
 
@@ -16,7 +16,7 @@
       {{ game.name }}
     </option>
   </select>
-    <button v-on:click="generateManifest">download</button>
+    <button v-on:click="generateManifest">download manifest</button>
 </div>
 
 <script src="script.js"></script>
