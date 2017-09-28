@@ -2,7 +2,7 @@ new Vue({
     el: '#app',
     data: {
         message: 'Welcome!',
-        steamid: '76561198283464121',
+        steamid: '',
         games: [],
         selected: {}
     },
