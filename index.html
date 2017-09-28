@@ -1,0 +1,22 @@
+<script src="https://unpkg.com/vue"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+
+<div id="app">
+    <p>{{ message }}</p>
+
+    <input v-model="steamid" placeholder="steam id">
+    <button v-on:click="fetchGameList">my games</button>
+
+    <br>
+
+    <select v-model="selected">
+    <option disabled value="">select one</option>
+    <option v-for="game in games" v-bind:value="game">
+      {{ game.name }}
+    </option>
+  </select>
+    <button v-on:click="generateManifest">download</button>
+</div>
+
+<script src="script.js"></script>
