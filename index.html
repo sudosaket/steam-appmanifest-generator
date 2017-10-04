@@ -1,22 +1,44 @@
-<script src="https://unpkg.com/vue"></script>
-<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Steam AppManifest Generator</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/vue"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
     crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://unpkg.com/vue-material/dist/vue-material.css">
+  <script src="https://unpkg.com/vue-material"></script>
+</head>
 
-<div id="app">
-    <p>{{ message }}</p>
+<body>
 
-    <input v-model="steamid" placeholder="steam id">
-    <button v-on:click="fetchGameList">fetch my games</button>
+  <div id="app">
+    <md-toolbar>
+      <h1 class="md-title">Welcome!</h1>
+    </md-toolbar>
 
-    <br>
+    <div class="main-content">
+      <input v-model="steamid" placeholder="steam id">
+      <button v-on:click="fetchGameList">fetch my games</button>
 
-    <select v-model="selected">
-    <option disabled value="">select one</option>
-    <option v-for="game in games" v-bind:value="game">
-      {{ game.name }}
-    </option>
-  </select>
-    <button v-on:click="generateManifest">download manifest</button>
-</div>
+      <br>
 
-<script src="script.js"></script>
+      <select v-model="selected">
+        <option disabled value="">select one</option>
+        <option v-for="game in games" v-bind:value="game">
+          {{ game.name }}
+        </option>
+      </select>
+      <button v-on:click="generateManifest">download manifest</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

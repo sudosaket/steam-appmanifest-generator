@@ -1,8 +1,10 @@
+Vue.use(VueMaterial);
+
 new Vue({
     el: '#app',
     data: {
         message: 'Welcome!',
-        steamid: '',
+        steamid: '76561198091853591',
         games: [],
         selected: {}
     },
