@@ -19,13 +19,15 @@ new Vue({
             });
         },
         generateManifest: function () {
-            var that = this;
-            $.ajax({
-                url: `https://steam-appmanifest-generator.azurewebsites.net/api/GenerateAppManifestContent?appid=${this.selected.appid}&appname=${this.selected.name}`,
-                success: function (result) {
-                    download(`appmanifest_${that.selected.appid}.acf`, result);
-                }
-            });
+            result =
+`"AppState"
+{
+    "AppID"  "${this.selected.appid}"
+    "Universe" "1"
+    "installdir" "${this.selected.name}"
+    "StateFlags" "1026"
+}`
+            download(`appmanifest_${this.selected.appid}.acf`, result);
         }
     }
 });
