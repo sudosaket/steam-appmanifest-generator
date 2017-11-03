@@ -12,7 +12,7 @@ new Vue({
         fetchGameList: function () {
             var that = this;
             $.ajax({
-                url: `https://steam-appmanifest-generator.azurewebsites.net/api/hello?steamid=${this.steamid}`,
+                url: `https://steam-appmanifest-generator.azurewebsites.net/api/games?steamid=${this.steamid}`,
                 success: function (result) {
                     that.games = result.response.games;
                 }
